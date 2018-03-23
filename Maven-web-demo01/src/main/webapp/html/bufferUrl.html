@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+</head>
+<body>
+<div></div>
+<div style="position:absolute;top:50%;left:50%;margin:-150px 0 0 -150px;width:300px;height:200px;  ">
+<span>输入需要缓存的网址：</span>
+<input type="text" name="webUrl" id ="webUrl">
+<button id = "cliWeb" name = "采集">采集</button>
+</div>
+
+</body>
+<script type="text/javascript">
+$("#cliWeb").click(function(){
+	  $.ajax({
+		  type:'post',
+		  url:'../welknow/weburlsave.action',
+		  dataType: "json",
+		  cache: false,
+		  contentType: "application/x-www-form-urlencoded; charset=utf-8",
+		  data: {webUrl:$("#webUrl").val()},
+		  success:function(data){
+			  
+		  }
+	  });
+	});
+	
+</script>
+
+<style>
+#mid{
+position:absolute;
+top:50%;
+left:50%;
+margin:-150px 0 0 -150px;
+border:1px solid red;
+}
+</style>
+</html>

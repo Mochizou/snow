@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.weknow.wh.dao.TargetWebMapper">
+  <resultMap id="BaseResultMap" type="com.weknow.wh.model.TargetWeb">
+    <result column="tarid" jdbcType="VARCHAR" property="tarid" />
+    <result column="tarurl" jdbcType="VARCHAR" property="tarurl" />
+    <result column="tarname" jdbcType="VARCHAR" property="tarname" />
+  </resultMap>
+  <insert id="insert" parameterType="com.weknow.wh.model.TargetWeb">
+    insert into targetweb (tarid, tarurl, tarname
+      )
+    values (#{tarid,jdbcType=VARCHAR}, #{tarurl,jdbcType=VARCHAR}, #{tarname,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.weknow.wh.model.TargetWeb">
+    insert into targetweb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tarid != null">
+        tarid,
+      </if>
+      <if test="tarurl != null">
+        tarurl,
+      </if>
+      <if test="tarname != null">
+        tarname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tarid != null">
+        #{tarid,jdbcType=VARCHAR},
+      </if>
+      <if test="tarurl != null">
+        #{tarurl,jdbcType=VARCHAR},
+      </if>
+      <if test="tarname != null">
+        #{tarname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

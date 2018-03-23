@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.weknow.wh.dao.WebNodeMapper">
+  <resultMap id="BaseResultMap" type="com.weknow.wh.model.WebNode">
+    <result column="webnodeid" jdbcType="VARCHAR" property="webnodeid" />
+    <result column="nodeweburl" jdbcType="VARCHAR" property="nodeweburl" />
+    <result column="nodeurl" jdbcType="VARCHAR" property="nodeurl" />
+    <result column="nodename" jdbcType="VARCHAR" property="nodename" />
+    <result column="nodecount" jdbcType="VARCHAR" property="nodecount" />
+    <result column="nodetime" jdbcType="DATE" property="nodetime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.weknow.wh.model.WebNode">
+    insert into webnode (webnodeid, nodeweburl, nodeurl, 
+      nodename, nodecount, nodetime
+      )
+    values (#{webnodeid,jdbcType=VARCHAR}, #{nodeweburl,jdbcType=VARCHAR}, #{nodeurl,jdbcType=VARCHAR}, 
+      #{nodename,jdbcType=VARCHAR}, #{nodecount,jdbcType=VARCHAR}, #{nodetime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.weknow.wh.model.WebNode">
+    insert into webnode
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="webnodeid != null">
+        webnodeid,
+      </if>
+      <if test="nodeweburl != null">
+        nodeweburl,
+      </if>
+      <if test="nodeurl != null">
+        nodeurl,
+      </if>
+      <if test="nodename != null">
+        nodename,
+      </if>
+      <if test="nodecount != null">
+        nodecount,
+      </if>
+      <if test="nodetime != null">
+        nodetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="webnodeid != null">
+        #{webnodeid,jdbcType=VARCHAR},
+      </if>
+      <if test="nodeweburl != null">
+        #{nodeweburl,jdbcType=VARCHAR},
+      </if>
+      <if test="nodeurl != null">
+        #{nodeurl,jdbcType=VARCHAR},
+      </if>
+      <if test="nodename != null">
+        #{nodename,jdbcType=VARCHAR},
+      </if>
+      <if test="nodecount != null">
+        #{nodecount,jdbcType=VARCHAR},
+      </if>
+      <if test="nodetime != null">
+        #{nodetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+</mapper>
