@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.weknow.wh.dao.WeKnowUserMapper">
+  <resultMap id="BaseResultMap" type="com.weknow.wh.model.WeKnowUser">
+    <result column="wkuserid" jdbcType="VARCHAR" property="wkuserid" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="userpassword" jdbcType="VARCHAR" property="userpassword" />
+    <result column="wkcode" jdbcType="VARCHAR" property="wkcode" />
+    <result column="usermail" jdbcType="VARCHAR" property="usermail" />
+  </resultMap>
+  <insert id="insert" parameterType="com.weknow.wh.model.WeKnowUser">
+    insert into weknowuser (wkuserid, username, userpassword, 
+      wkcode, usermail)
+    values (#{wkuserid,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{userpassword,jdbcType=VARCHAR}, 
+      #{wkcode,jdbcType=VARCHAR}, #{usermail,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.weknow.wh.model.WeKnowUser">
+    insert into weknowuser
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="wkuserid != null">
+        wkuserid,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="userpassword != null">
+        userpassword,
+      </if>
+      <if test="wkcode != null">
+        wkcode,
+      </if>
+      <if test="usermail != null">
+        usermail,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="wkuserid != null">
+        #{wkuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="userpassword != null">
+        #{userpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="wkcode != null">
+        #{wkcode,jdbcType=VARCHAR},
+      </if>
+      <if test="usermail != null">
+        #{usermail,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

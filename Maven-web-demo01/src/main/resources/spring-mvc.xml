@@ -16,6 +16,7 @@
     
 	<mvc:resources location="/" mapping="/**/*.html"/>
 	<mvc:resources location="/" mapping="/**/*.js"/>
+	<mvc:resources location="/" mapping="/**/*.css"/>
 	
 	<mvc:resources location="/" mapping="/**/*.png"/>
 	<!--避免IE执行AJAX时，返回JSON出现下载文件 -->

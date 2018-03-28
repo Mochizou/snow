@@ -1,11 +1,16 @@
 com\weknow\util\rabbit\ScheTime.class
+com\weknow\wh\model\WeKnowUser.class
 com\weknow\wh\service\TargetWebServicesI.class
+com\weknow\wh\service\WeKnowUserServiceI.class
 com\weknow\wh\dao\TargetWebMapper.class
 com\weknow\util\rabbit\ScheTime$1.class
 com\weknow\wh\service\Impl\TargetWebServicesImpl.class
+com\weknow\wh\dao\WeKnowUserMapper.class
+com\weknow\util\mail\MailUtils.class
+com\weknow\util\rabbit\WhUtil.class
 com\weknow\wh\controller\wh.class
 com\weknow\wh\model\TargetWeb.class
 com\weknow\wh\dao\WebNodeMapper.class
-com\weknow\util\rabbit\Robot.class
+com\weknow\wh\service\Impl\WeKnowUserServiceImpl.class
 com\weknow\util\rabbit\RabbitUtil.class
 com\weknow\wh\model\WebNode.class
